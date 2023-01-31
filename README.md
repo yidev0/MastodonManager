@@ -1,28 +1,39 @@
-# BrowserManager
+# MastodonManager
 
-### Easy browser managment in Swift.
-*Supports iOS 9 and above.*
+Manage which Mastodon client to open links with.
+*Supports iOS/iPadOS 14 and above.*
 
-### Try it in [Neptune](https://www.twitter.com/NeptuneApp_ "Neptune")
+Try original BrowserManager in [Neptune](https://www.twitter.com/NeptuneApp_ "Neptune")
+Try MastodonManager in [Bookmarks](https://apps.apple.com/app/id1590304377 "Bookmarks")
 
 ## How to use
 ### The Default Browser
-*Automatically defaults to in-app safari if not modified.*
+*Automatically defaults to default browser if not modified.*
 ```swift
-BrowserManager.shared.defaultBrowser
+MastodonManager.shared.defaultApp
 ```
-**How to change the default browser**
+**How to change the default Mastodon app**
 ```swift
-let safari = BrowserManager.shared.supportedBrowsers.safari
-BrowserManager.shared.defaultBrowser = safari
-```
-
-### Get installed browsers
-```swift
-BrowserManager.shared.installedBrowsers
+let safari = MastodonManager.shared.supportedApps.safari
+MastodonManager.shared.defaultApp = safari
 ```
 
-### Open URL with default browser
+### Get installed Mastodon apps
 ```swift
-BrowserManager.shared.open(url: {YOUR URL}, presentingController: self)
+MastodonManager.shared.installedApps
 ```
+
+### Open URL with default Mastodon app
+```swift
+MastodonManager.shared.open(url: {YOUR URL}, presentingController: self)
+```
+
+## Supported Apps
+- Ivory [App Store][Ivory-AppStore]
+- Ice Cubes [App Store] [IceCubes-AppStore]
+- Mammoth [Homepage][Mammoth-Homepage]
+
+
+[Ivory-AppStore]: https://apps.apple.com/app/id6444602274
+[IceCubes-AppStore]: https://apps.apple.com/app/id6444915884
+[Mammoth-Homepage]: https://getmammoth.app/

@@ -1,7 +1,7 @@
 import XCTest
 
-import BrowserManagerTests
+import MastodonManagerTests
 
 var tests = [XCTestCaseEntry]()
-tests += BrowserManagerTests.allTests()
+tests += MastodonManagerTests.allTests()
 XCTMain(tests)
