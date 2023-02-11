@@ -104,6 +104,15 @@ open class MastodonManager {
                 openBrowser()
             case "In-App Browser":
                 openInApp()
+            case "Mastodon":
+                if let id = url.absoluteString.split(separator: "/").last, let finalURL = URL(string: "mastodon://status/\(id)") {
+                    self?.appShared.open(finalURL, options: [:], completionHandler: { (_) in
+                        print(finalURL)
+                        completion?()
+                    })
+                } else {
+                    openBrowser()
+                }
             case "Ivory":
                 if let finalURL = URL(string: "ivory://acct/openURL?url=\(url)") {
                     self?.appShared.open(finalURL, options: [:], completionHandler: { (_) in
